@@ -7,11 +7,13 @@ An automated high-availability infrastructure utilizing Vagrant, VirtualBox, Nex
 ## 1. Infrastructure Overview
 
 The cluster consists of four Ubuntu 22.04 LTS virtual machines communicating over an isolated private host-only network (`192.168.56.0/24`).
+
+```
 Client / Windows Host
                          (192.168.56.1)
                                |
                    Requests to Shared VIP:
-                    [http://192.168.56.100](http://192.168.56.100)
+                    http://192.168.56.100
                                |
     +--------------------------+--------------------------+
     |                                                     |
@@ -37,6 +39,7 @@ v                                   v
 |  Daemon: systemd (next-app)     | |  Daemon: systemd (next-app)     |
 |  Runs As: appuser               | |  Runs As: appuser               |
 +---------------------------------+ +---------------------------------+
+```
 
 ### Node Network Matrix
 
